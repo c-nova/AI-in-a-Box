@@ -22,10 +22,10 @@ public class DALLEPlugin
 
 
 
-    [SKFunction, Description("Generate images from descriptions.")]
+    [SKFunction, Description("説明から画像を生成します。")]
     public async Task<string> GenerateImages(
-        [Description("The description of the images to be generated")] string prompt,
-        [Description("The number of images to generate. If not specified, I should use 1")] int n
+        [Description("生成する画像の説明。")] string prompt,
+        [Description("生成する画像の数。指定しない場合は、1を使用する必要があります")] int n
     )
     {
         await _turnContext.SendActivityAsync($"Generating {n} images with the description \"{prompt}\"...");
@@ -41,7 +41,7 @@ public class DALLEPlugin
         images.Add(
             new {
                 type="TextBlock",
-                text="Here are the generated images.",
+                text="こちらが生成された画像です。",
                 size="large"
             }
         );
@@ -60,7 +60,7 @@ public class DALLEPlugin
             Content = adaptiveCardJson,
         };
         await _turnContext.SendActivityAsync(MessageFactory.Attachment(adaptiveCardAttachment));
-        return "Images were generated successfully and already sent to user.";
+        return "画像は正常に生成され、ユーザーに送信されました。";
     }
 
 }

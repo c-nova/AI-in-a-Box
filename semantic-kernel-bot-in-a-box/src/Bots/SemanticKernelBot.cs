@@ -117,7 +117,7 @@ namespace Microsoft.BotBuilderSamples
             await turnContext.SendActivityAsync(new Activity(type: "typing"));
 
             await HandleFileUploads(conversationData, turnContext);
-            if (turnContext.Activity.Text.IsNullOrEmpty())
+            if (string.IsNullOrEmpty(turnContext.Activity.Text))
                 return "";
 
             kernel = GetKernel(conversationData, turnContext);

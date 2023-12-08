@@ -21,13 +21,13 @@ public class BingPlugin
     }
     // Returns search results with headers.
 
-    [SKFunction, Description("Search the internet by text using Bing. Terms and conditions require you to explicitly say results were pulled from the web, and list links the links associated with any information you provide. Before using this function, the assistant should always ask whether the user would like it to search the web.")]
+    [SKFunction, Description("Bingを使用してテキストでインターネットを検索します。利用規約では、検索結果がウェブから取得されたことを明示し、提供する情報に関連するリンクをリストアップする必要があります。この機能を使用する前に、アシスタントは必ずユーザーに Web 検索を依頼する必要があります。")]
     public async Task<string> BingSearch(
-        [Description("The query to pass into Bing")] string query,
-        [Description("The result type you are looking for. One of \"webpages\",\"images\",\"videos\",\"news\". If no news are returned, you may try webpages as a fallback.")] string resultType
+        [Description("Bing に渡すクエリ")] string query,
+        [Description("探している結果の種類。\"webpages\",\"images\",\"videos\",\"news\" のいずれか。news で結果が返されない場合は、フォールバックとして webpages を試すことができます。")] string resultType
     )
     {
-        await _turnContext.SendActivityAsync($"Searching the internet for {resultType} with the description \"{query}\"...");
+        await _turnContext.SendActivityAsync($"インターネットで {resultType} を \"{query}\" という説明で検索しています...");
 
         SearchResult result = await _bingClient.WebSearch(query, resultType);
 

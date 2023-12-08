@@ -23,12 +23,12 @@ public class HotelsPlugin
 
     
 
-    [SKFunction, Description("Search for hotels by description.")]
+    [SKFunction, Description("ホテルの説明から検索できます。")]
     public async Task<string> FindHotels(
-        [Description("The description to be used in the search")] string query
+        [Description("検索に使用する説明")] string query
     )
     {
-        await _turnContext.SendActivityAsync($"Searching hotels with the description \"{query}\"...");
+        await _turnContext.SendActivityAsync($"この説明からホテルを検索 \"{query}\"...");
         var options = new SearchOptions();
         options.Select.Add("HotelName");
         options.Select.Add("Address");
@@ -38,7 +38,7 @@ public class HotelsPlugin
         var textResults = "[HOTEL RESULTS]\n\n";
         var searchResults = response.Value.GetResults();
         if (searchResults.Count() == 0)
-            return "No hotels found";
+            return "ホテルが見つかりませんでした。";
         foreach (SearchResult<Hotel> result in searchResults)
         {
             textResults += $"Name: {result.Document.HotelName}: {result.Document.Address.StreetAddress}, ${result.Document.Address.City}\n\n";

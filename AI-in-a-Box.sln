@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "semantic-kernel-bot-in-a-box", "semantic-kernel-bot-in-a-box", "{E8E66AD4-2C11-460C-9BE9-1EBBCB9EAB53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SemanticKernelBot", "semantic-kernel-bot-in-a-box\src\SemanticKernelBot.csproj", "{29FFBC52-2EE8-43E0-AC01-911F3B588ACE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29FFBC52-2EE8-43E0-AC01-911F3B588ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FFBC52-2EE8-43E0-AC01-911F3B588ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FFBC52-2EE8-43E0-AC01-911F3B588ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FFBC52-2EE8-43E0-AC01-911F3B588ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{29FFBC52-2EE8-43E0-AC01-911F3B588ACE} = {E8E66AD4-2C11-460C-9BE9-1EBBCB9EAB53}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB13BB7E-81ED-4ED7-A1D1-28A0C0B54E82}
+	EndGlobalSection
+EndGlobal

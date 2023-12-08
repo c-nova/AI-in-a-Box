@@ -53,10 +53,10 @@ namespace Microsoft.BotBuilderSamples
 
             // -- Special keywords
             // Clear conversation
-            if (turnContext.Activity.Text != null && turnContext.Activity.Text.ToLower() == "clear") {
+            if (turnContext.Activity.Text != null && (turnContext.Activity.Text.ToLower() == "クリア")) {
                 conversationData.History.Clear();
                 conversationData.Attachments.Clear();
-                await turnContext.SendActivityAsync("Conversation context cleared");
+                await turnContext.SendActivityAsync("今までの会話の記憶をクリアしました");
                 return;
             }
             conversationData.History.Add(new ConversationTurn { Role = "user", Message = turnContext.Activity.Text });
